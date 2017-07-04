@@ -14,7 +14,6 @@ RUN groupadd -g $gid ubuntu \
     && usermod -aG sudo ubuntu \
     && echo "ubuntu ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
-
 # change user from root to `ubuntu`
 USER ubuntu
 WORKDIR /home/ubuntu
@@ -22,6 +21,6 @@ WORKDIR /home/ubuntu
 # install coding environment
 COPY env-install.sh $HOME
 RUN sudo chown ubuntu:ubuntu $HOME/env-install.sh \
-    && sh $HOME/env-install.sh
+    && zsh $HOME/env-install.sh
 
 ENTRYPOINT ["/bin/zsh"]

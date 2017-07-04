@@ -8,3 +8,8 @@ git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
 echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc
 echo 'eval "$(pyenv init -)"' >> ~/.zshrc
+# install anaconda
+source ~/.zshrc
+pyenv install anaconda3-4.4.0
+pyenv rehash
+pyenv global anaconda3-4.4.0
